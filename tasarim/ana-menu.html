@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DailyDairy — Ana menü</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Outfit:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #efe7dc;
+      --phone: #f7f3ec;
+      --surface: #fffdf9;
+      --ink: #1c1915;
+      --muted: #6f675e;
+      --line: rgba(28, 25, 21, 0.08);
+      --accent: #c4654a;
+      --accent-ink: #fff8f4;
+      --soft: #f3e3da;
+      --shadow: 0 24px 60px rgba(70, 42, 24, 0.16);
+    }
+
+    [data-palette="kagit"][data-mode="dark"] {
+      --bg: #2a241e;
+      --phone: #161310;
+      --surface: #221e1a;
+      --ink: #f4efe6;
+      --muted: #b3a89b;
+      --line: rgba(244, 239, 230, 0.08);
+      --accent: #e08a72;
+      --accent-ink: #2a140e;
+      --soft: #3a2a24;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-palette="deniz"][data-mode="light"] {
+      --bg: #d5e6e8;
+      --phone: #f3f8f8;
+      --surface: #fbfeff;
+      --ink: #102428;
+      --muted: #4d686d;
+      --line: rgba(16, 36, 40, 0.08);
+      --accent: #0e7490;
+      --accent-ink: #f3fcff;
+      --soft: #d7eef3;
+      --shadow: 0 24px 60px rgba(14, 60, 72, 0.16);
+    }
+
+    [data-palette="deniz"][data-mode="dark"] {
+      --bg: #102022;
+      --phone: #0c1618;
+      --surface: #142426;
+      --ink: #e7f4f5;
+      --muted: #9bb8bc;
+      --line: rgba(231, 244, 245, 0.08);
+      --accent: #5ec4d4;
+      --accent-ink: #062126;
+      --soft: #1b383d;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-palette="zeytin"][data-mode="light"] {
+      --bg: #e3ead8;
+      --phone: #f6f8f1;
+      --surface: #fcfdf8;
+      --ink: #1b2414;
+      --muted: #5c6750;
+      --line: rgba(27, 36, 20, 0.08);
+      --accent: #5c6b32;
+      --accent-ink: #f7fbea;
+      --soft: #e4edd0;
+      --shadow: 0 24px 60px rgba(40, 55, 18, 0.16);
+    }
+
+    [data-palette="zeytin"][data-mode="dark"] {
+      --bg: #1a2116;
+      --phone: #12170f;
+      --surface: #1c2418;
+      --ink: #eef3e4;
+      --muted: #b4c0a4;
+      --line: rgba(238, 243, 228, 0.08);
+      --accent: #b6c77a;
+      --accent-ink: #1a220e;
+      --soft: #2a3520;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-palette="mercan"][data-mode="light"] {
+      --bg: #f3e2dc;
+      --phone: #fbf6f4;
+      --surface: #fffdfc;
+      --ink: #2a1616;
+      --muted: #7a5d5b;
+      --line: rgba(42, 22, 22, 0.08);
+      --accent: #b94b55;
+      --accent-ink: #fff7f7;
+      --soft: #f8e0e2;
+      --shadow: 0 24px 60px rgba(90, 30, 36, 0.16);
+    }
+
+    [data-palette="mercan"][data-mode="dark"] {
+      --bg: #261618;
+      --phone: #160f10;
+      --surface: #241618;
+      --ink: #f8ecec;
+      --muted: #c7a8a8;
+      --line: rgba(248, 236, 236, 0.08);
+      --accent: #f0999a;
+      --accent-ink: #2c1214;
+      --soft: #3a2226;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-palette="gece"][data-mode="light"] {
+      --bg: #e4e2f2;
+      --phone: #f6f5fb;
+      --surface: #fcfbff;
+      --ink: #1a1730;
+      --muted: #5e5a78;
+      --line: rgba(26, 23, 48, 0.08);
+      --accent: #5b4db8;
+      --accent-ink: #f7f5ff;
+      --soft: #e4dff8;
+      --shadow: 0 24px 60px rgba(40, 30, 90, 0.16);
+    }
+
+    [data-palette="gece"][data-mode="dark"] {
+      --bg: #161326;
+      --phone: #100e1c;
+      --surface: #1b1730;
+      --ink: #f1eefe;
+      --muted: #b3adc9;
+      --line: rgba(241, 238, 254, 0.08);
+      --accent: #b7a6ff;
+      --accent-ink: #1a1433;
+      --soft: #2a2450;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Outfit, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 32px 16px 48px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .desk {
+      width: min(980px, 100%);
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .phone {
+      width: 390px;
+      height: 844px;
+      background: var(--phone);
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      padding: 18px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 6px 8px 10px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 8px 6px 16px;
+    }
+
+    .hello {
+      margin: 0;
+      font-family: Fraunces, serif;
+      font-size: 34px;
+      font-weight: 620;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .date {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .icon-btn .material-symbols-outlined { font-size: 22px; }
+
+    .hero {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border-radius: 26px;
+      padding: 20px 20px 18px;
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: color-mix(in srgb, var(--accent-ink) 16%, transparent);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero h2 {
+      margin: 16px 0 0;
+      font-family: Fraunces, serif;
+      font-size: 28px;
+      font-weight: 620;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+      max-width: 26ch;
+      opacity: 0.88;
+    }
+
+    .grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 132px;
+    }
+
+    .card .material-symbols-outlined {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .card h3 {
+      margin: 14px 0 0;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .card span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .panel h2 {
+      font-family: Fraunces, serif;
+      font-size: 28px;
+      margin: 8px 0 8px;
+    }
+
+    .panel p.lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 46ch;
+    }
+
+    .group { margin-bottom: 22px; }
+    .group h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    button.choice {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    button.choice[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--phone);
+      border-color: var(--ink);
+    }
+
+    .swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    button.choice.swatch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 14px;
+      padding: 8px 12px 8px 8px;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    ul.icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    ul.icons li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+
+    ul.icons code {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+
+    @media (max-width: 860px) {
+      .desk { grid-template-columns: 1fr; justify-items: center; }
+    }
+  </style>
+</head>
+<body data-palette="kagit" data-mode="light">
+  <div class="desk">
+    <div class="phone" aria-label="Ana menü önizlemesi">
+      <div class="status"><span>20:22</span><span>5G</span></div>
+      <header>
+        <div>
+          <h1 class="hello">Merhaba</h1>
+          <p class="date">2 Ekim, cuma</p>
+        </div>
+        <button class="icon-btn" type="button" aria-label="Temalar">
+          <span class="material-symbols-outlined">palette</span>
+        </button>
+      </header>
+
+      <section class="hero">
+        <div class="hero-top">
+          <span class="chip">
+            <span class="material-symbols-outlined" style="font-size:16px">edit_note</span>
+            Günlük
+          </span>
+        </div>
+        <div>
+          <h2>Bugün</h2>
+          <p>Henüz bir şey yazmadın. Kısa bir cümle yeter.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <span class="material-symbols-outlined">sticky_note_2</span>
+          <div>
+            <h3>Notlar</h3>
+            <span>4 not</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <div>
+            <h3>Alışveriş</h3>
+            <span>2 liste</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="material-symbols-outlined">movie</span>
+          <div>
+            <h3>İzlenenler</h3>
+            <span>Film ve dizi</span>
+          </div>
+        </article>
+        <article class="card">
+          <span class="material-symbols-outlined">auto_stories</span>
+          <div>
+            <h3>Kitaplar</h3>
+            <span>Hedef ve okundu</span>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <aside class="panel">
+      <h2>Ana menü</h2>
+      <p class="lead">Günlük geniş kart. Diğer dört alan eşit. Alt şerit yok; beş yazı oraya sığmaz. Tema, sağ üstteki palet ikonundan açılır.</p>
+
+      <div class="group">
+        <h3>Görünüm</h3>
+        <div class="row" id="modes">
+          <button class="choice" type="button" data-mode="light" aria-pressed="true">Açık</button>
+          <button class="choice" type="button" data-mode="dark" aria-pressed="false">Karanlık</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3>Palet</h3>
+        <div class="row" id="palettes">
+          <button class="choice swatch-btn" type="button" data-palette="kagit" aria-pressed="true"><i class="dot" style="background:#c4654a"></i>Kâğıt</button>
+          <button class="choice swatch-btn" type="button" data-palette="deniz" aria-pressed="false"><i class="dot" style="background:#0e7490"></i>Deniz</button>
+          <button class="choice swatch-btn" type="button" data-palette="zeytin" aria-pressed="false"><i class="dot" style="background:#5c6b32"></i>Zeytin</button>
+          <button class="choice swatch-btn" type="button" data-palette="mercan" aria-pressed="false"><i class="dot" style="background:#b94b55"></i>Mercan</button>
+          <button class="choice swatch-btn" type="button" data-palette="gece" aria-pressed="false"><i class="dot" style="background:#5b4db8"></i>Gece</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3>İkonlar — Material Symbols</h3>
+        <ul class="icons">
+          <li><span class="material-symbols-outlined">edit_note</span> Günlük <code>edit_note</code></li>
+          <li><span class="material-symbols-outlined">sticky_note_2</span> Notlar <code>sticky_note_2</code></li>
+          <li><span class="material-symbols-outlined">shopping_bag</span> Alışveriş <code>shopping_bag</code></li>
+          <li><span class="material-symbols-outlined">movie</span> İzlenenler <code>movie</code></li>
+          <li><span class="material-symbols-outlined">auto_stories</span> Kitaplar <code>auto_stories</code></li>
+          <li><span class="material-symbols-outlined">palette</span> Tema <code>palette</code></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const root = document.body;
+
+    function press(group, attr, value) {
+      group.querySelectorAll("button").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset[attr] === value ? "true" : "false");
+      });
+    }
+
+    document.getElementById("modes").addEventListener("click", (event) => {
+      const btn = event.target.closest("button");
+      if (!btn) return;
+      root.dataset.mode = btn.dataset.mode;
+      press(document.getElementById("modes"), "mode", btn.dataset.mode);
+    });
+
+    document.getElementById("palettes").addEventListener("click", (event) => {
+      const btn = event.target.closest("button");
+      if (!btn) return;
+      root.dataset.palette = btn.dataset.palette;
+      press(document.getElementById("palettes"), "palette", btn.dataset.palette);
+    });
+  </script>
+</body>
+</html>

@@ -10,19 +10,18 @@ Günlük, notlar, listeler, izleme listesi ve kitaplar. Tek telefonda, şifreyle
 
 **Günlük**
 
-- Her açılışta şifre ister. İpucu ekranda durur, şifrenin kendisi durmaz.
-- Şifre unutulursa ve ipucu da unutulursa geri dönüş yoktur. Kayıttan önce bunu sorar.
-- Parmak izi bu telefonda şifrenin yerine geçer. Başka telefona yedekle gitmez.
-- Fotoğraf, GIF, video ve yer eklenebilir. GIF aranır.
+- Her uygulama açılışında şifre ister.
+- Parmak izi destekleyen telefonlarda; Parmak izi şifrenin yerine geçer. Başka telefona yedekle gitmez.
+- Fotoğraf, GIF, video ve konum eklenebilir. GIF aranır.
 - Yazı içinde aranır. Güne, aya ve yıla göre süzülür.
-- Bağlantılar tıklanır. Yazı okunurken düzenlenir, silinir.
 
 </td>
 <td width="50%" valign="top">
 
 **Notlar**
 
-- Cep defteri. Klasöre konur, başa tutturulur.
+- Cep defteri.
+- Klasöre oluşturma ve başa tutturma olayları vardır.
 - Klasör yokken taşı dersen önce klasör açılır, not oraya girer.
 - Galeriden fotoğraf ve GIF konur.
 - Başlıkta ve yazıda aranır.
@@ -35,10 +34,10 @@ Günlük, notlar, listeler, izleme listesi ve kitaplar. Tek telefonda, şifreyle
 
 **Listeler**
 
-- Üç tür: düz liste, alışveriş, tarif.
-- Alışverişte "süt 30 TL" yazınca fiyat kendiliğinden kutuya girer. Tutar toplanır.
-- "20 tane yumurta" yazınca adet silinmez. İsim kalır, miktar yanında parantezde durur.
-- Tarifte "2 kilo un" yazınca un ve 2 kg diye ayrılır. Gram, kilo, litre, mililitre.
+- Üç tür: düz liste, alışveriş ve tarif.
+- Alışverişte "Ürün X ₺ (veya tl/TL)" yazınca fiyat kendiliğinden kutuya girer. Tutar toplanır.
+- "20 tane ürün_adı" yazınca adet silinmez. İsim kalır, miktar yanında parantezde durur.
+- Tarifte "2 kilo ürün_adı" yazınca ürün_adı ve 2 kg diye ayrılır. Gram, kilo, litre, mililitre için de geçerlidir.
 - Tür, liste ya da ürün adıyla aranır. "Tarif" yazınca tarifler gelir.
 - Her listenin ikonu sonradan seçilir. Yirmi beş ikon, tek satırda kayar.
 
@@ -48,8 +47,8 @@ Günlük, notlar, listeler, izleme listesi ve kitaplar. Tek telefonda, şifreyle
 **İzleme listesi**
 
 - Film ve dizi aranır. Kapak, yıl ve özet gelir.
-- İzleyeceğim, izliyorum, izledim. Filmde "izliyorum" yok.
-- İzlediklerime 10 üzerinden puan ve not konur.
+- "İzleyeceğim, İzliyorum, İzledim" Olmak üzere üç katagori var. Filmde "izliyorum" yok.
+- "İzlediklerim" katagorisinde Film/Diziye 10 üzerinden puan ve not konur.
 - Raftan rafa taşınır, listeden çıkarılır.
 
 </td>
@@ -59,10 +58,10 @@ Günlük, notlar, listeler, izleme listesi ve kitaplar. Tek telefonda, şifreyle
 
 **Kitaplar**
 
-- Kitap aranır. Aynı kitabın on yayını değil, tek kitap çıkar.
-- Kapak, ad ve yazar elle de eklenir. Aramada yoksa liste boş kalmaz.
-- Şu an okuyorum, okuyacaklarım, okudum.
-- Okuduklarıma puan ve not konur.
+- Kitap aranır.
+- Aramadan sonuç çıkmaz ise; Kapak, ad ve yazar elle de eklenir.
+- "Şu an okuyorum, okuyacaklarım, okudum" olarak toplam 3 katagori
+- "Okuduklarım" katagorisinde okunanlara 10 üzerinden puan ve not konur.
 - Yazarın adına basınca o yazarın kitapları gelir.
 
 </td>
@@ -75,7 +74,7 @@ Günlük, notlar, listeler, izleme listesi ve kitaplar. Tek telefonda, şifreyle
 - İlk kurulumda palet Sistemdir.
 - Günlük, notlar, listeler, filmler, kitaplar, fotoğraflar, tema ve şifre tek dosyada dışa aktarılır.
 - İçe alınca bu telefondakinin yerine geçer. Geri alınamaz.
-- Android 8 ve sonrası. Hesap yok, her şey bu telefonda.
+- Android 8 ve sonrası. Hesap yok, her şey telefonda.
 
 </td>
 </tr>
